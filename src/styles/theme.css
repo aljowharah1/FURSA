@@ -1,0 +1,195 @@
+/* ============================================================
+   CareerMate — Design Tokens
+   Warm cream + peach accent · Playfair Display + JetBrains Mono
+   ============================================================ */
+
+:root {
+  /* ── Fonts ── */
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-family:  var(--font-body);
+
+  /* ── Backgrounds ── */
+  --bg:    #fef6ee;
+  --bg-1:  #f8ecdd;
+  --bg-2:  #f2e2cd;
+  --bg-3:  #ead5b7;
+
+  /* ── Ink ── */
+  --ink:       #1a1612;
+  --ink-dim:   #5a4e42;
+  --ink-faint: #9a8a78;
+
+  /* ── Lines / borders ── */
+  --line:        #e6d6c0;
+  --line-strong: #c9b594;
+
+  /* ── Signal (peach accent) ── */
+  --signal:     #f4a78a;
+  --signal-dim: #d97a5a;
+  --signal-ink: #3a1e14;
+
+  /* ── Semantic ── */
+  --warn: #b93a14;
+  --ok:   #5c8a3f;
+
+  /* ── Legacy aliases (keep existing component hooks working) ── */
+  --primary:        var(--signal);
+  --primary-dark:   var(--signal-dim);
+  --primary-light:  #f9c8ae;
+  --primary-hover:  #f6b89d;
+  --secondary:      var(--ok);
+  --secondary-dark: #4a7030;
+  --secondary-light: #8ab870;
+  --accent-red:     var(--warn);
+  --accent-purple:  #9b72c0;
+  --accent-orange:  var(--signal-dim);
+  --accent-yellow:  #d4a840;
+
+  --background:   var(--bg);
+  --surface:      var(--bg-1);
+  --surface-dark: var(--bg-2);
+  --border:       var(--line);
+  --border-light: var(--line-strong);
+
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-dim);
+  --text-tertiary:  var(--ink-faint);
+  --text-inverse:   var(--signal-ink);
+  --text-link:      var(--signal-dim);
+
+  --beige:        var(--bg);
+  --peach:        var(--signal);
+  --light-yellow: #f5e6c0;
+
+  /* Status */
+  --status-draft:     var(--ink-faint);
+  --status-applied:   var(--signal-dim);
+  --status-interview: #c07030;
+  --status-accepted:  var(--ok);
+  --status-rejected:  var(--warn);
+  --status-ai:        #8860c0;
+
+  /* Gradient (stage background) */
+  --gradient-main:
+    radial-gradient(ellipse at 20% 0%, #fbe4c8 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, #f6d7b7 0%, transparent 55%),
+    #ebd8b7;
+  --gradient-subtle:
+    radial-gradient(ellipse at 20% 0%, #fbe4c8 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, #f6d7b7 0%, transparent 55%),
+    #f2e4cc;
+  --gradient-card: linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 100%);
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(26, 22, 18, 0.06);
+  --shadow-md:   0 4px 8px rgba(26, 22, 18, 0.08);
+  --shadow-lg:   0 10px 24px rgba(26, 22, 18, 0.10);
+  --shadow-xl:   0 20px 40px rgba(26, 22, 18, 0.18);
+  --shadow-card: 0 6px 24px rgba(244, 167, 138, 0.12);
+
+  /* Radius */
+  --r:     10px;
+  --r-lg:  18px;
+  --radius-sm: var(--r);
+  --radius-md: 14px;
+  --radius-lg: var(--r-lg);
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Typography scale */
+  --font-size-xs:   10px;
+  --font-size-sm:   12px;
+  --font-size-base: 14px;
+  --font-size-lg:   16px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  28px;
+  --font-size-3xl:  36px;
+
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --line-height-tight:   1.2;
+  --line-height-normal:  1.45;
+  --line-height-relaxed: 1.65;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-base: 220ms ease;
+  --transition-slow: 340ms ease;
+
+  /* Z-index */
+  --z-dropdown:       1000;
+  --z-sticky:         1020;
+  --z-fixed:          1030;
+  --z-modal-backdrop: 1040;
+  --z-modal:          1050;
+  --z-popover:        1060;
+  --z-tooltip:        1070;
+  --z-bottom-nav:     1100;
+
+  --bottom-nav-height: 84px;
+}
+
+/* ── Dark mode ── */
+[data-theme="dark"] {
+  --bg:    #14100c;
+  --bg-1:  #1d1813;
+  --bg-2:  #261f17;
+  --bg-3:  #30281e;
+
+  --ink:       #f2e8db;
+  --ink-dim:   #b0a090;
+  --ink-faint: #7a6e60;
+
+  --line:        #2e271d;
+  --line-strong: #4a3f30;
+
+  --signal:     #f4a78a;
+  --signal-dim: #c07858;
+  --signal-ink: #3a1e14;
+
+  --warn: #ff7a59;
+  --ok:   #a5c47d;
+
+  --background:   var(--bg);
+  --surface:      var(--bg-1);
+  --surface-dark: var(--bg-2);
+  --border:       var(--line);
+  --border-light: var(--line-strong);
+
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-dim);
+  --text-tertiary:  var(--ink-faint);
+
+  --gradient-main:
+    radial-gradient(ellipse at 20% 0%, #2a1d12 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, #1f150c 0%, transparent 55%),
+    #120d08;
+  --gradient-subtle:
+    radial-gradient(ellipse at 20% 0%, #2a1d12 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, #1f150c 0%, transparent 55%),
+    #18120a;
+  --gradient-card: linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 100%);
+
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md:   0 4px 8px rgba(0, 0, 0, 0.30);
+  --shadow-lg:   0 10px 24px rgba(0, 0, 0, 0.35);
+  --shadow-xl:   0 20px 40px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.30);
+}

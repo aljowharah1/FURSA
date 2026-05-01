@@ -1,0 +1,248 @@
+.card {
+  position: absolute;
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-1);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(26, 22, 18, 0.30);
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.card:active { cursor: grabbing; }
+
+/* ── Swipe stamp labels ── */
+.overlayLabel {
+  position: absolute;
+  top: 16px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  border-width: 2px;
+  border-style: solid;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+}
+
+.applyLabel {
+  left: 16px;
+  border-color: var(--signal);
+  color: var(--signal);
+  transform: rotate(-12deg);
+}
+
+.passLabel {
+  right: 16px;
+  border-color: var(--warn);
+  color: var(--warn);
+  transform: rotate(12deg);
+}
+
+/* ── Top bar ── */
+.topBar {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-2);
+}
+
+.cardId {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-family: var(--font-body);
+}
+
+.matchBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.matchHigh   { color: var(--signal-dim); border: 1px solid var(--signal-dim); background: color-mix(in srgb, var(--signal) 15%, transparent); }
+.matchMedium { color: var(--ok);         border: 1px solid var(--ok); }
+.matchLow    { color: var(--ink-faint);  border: 1px solid var(--line-strong); }
+
+/* ── Body ── */
+.body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ── Company row ── */
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.companyRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--signal);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--signal);
+  background: var(--bg-2);
+  flex-shrink: 0;
+}
+
+.companyMeta {
+  flex: 1;
+  min-width: 0;
+}
+
+.companyCategory {
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-family: var(--font-body);
+}
+
+.companyName {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 2px 0 0;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jobTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+/* ── Chips row ── */
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-dim);
+  font-weight: 600;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.chipSignal {
+  color: var(--signal-dim);
+  border-color: var(--signal-dim);
+  background: color-mix(in srgb, var(--signal) 12%, transparent);
+}
+
+/* ── Description ── */
+.description {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-dim);
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+}
+
+/* ── Stack tags ── */
+.stackSection { margin-top: 8px; }
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.skillChip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--signal);
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: transparent;
+}
+
+/* ── Card footer ── */
+.footer {
+  padding: 6px 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+/* ── Swipe hint ── */
+.hint {
+  display: none;
+}
+
+/* Legacy compat */
+.divider      { display: none; }
+.skillsSection { display: contents; }
+.skillsTitle  { display: none; }
+.metaGrid     { display: none; }
+.metaItem     { display: none; }
+.metaIcon     { display: none; }
+.skillMatched { display: none; }
+.skillMissing { display: none; }

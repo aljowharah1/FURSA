@@ -1,0 +1,93 @@
+.form {
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.group:last-of-type {
+  margin-bottom: 16px;
+}
+
+.groupLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.checkboxGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.checkboxLabel:hover {
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.checkboxLabel input {
+  display: none;
+}
+
+.checkboxLabelChecked {
+  background: var(--surface-dark);
+  border-color: var(--border);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  font-size: 11px;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.checkActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.updateBtn {
+  padding: 10px 24px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: opacity 0.15s;
+}
+
+.updateBtn:hover {
+  opacity: 0.85;
+}

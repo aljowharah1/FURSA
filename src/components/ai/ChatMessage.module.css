@@ -1,0 +1,142 @@
+.wrapper {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  max-width: 100%;
+}
+
+.user {
+  flex-direction: row-reverse;
+}
+
+.assistant {
+  flex-direction: row;
+}
+
+/* Avatar */
+.avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarUser {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.avatarAI {
+  background: var(--accent-purple);
+  color: var(--text-inverse);
+}
+
+.avatarInitial {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.robotIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Content column */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 75%;
+  min-width: 0;
+}
+
+/* Bubble */
+.bubble {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  line-height: var(--line-height-normal);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.bubbleUser {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border-bottom-right-radius: var(--space-1);
+}
+
+.bubbleAssistant {
+  background: var(--surface-dark);
+  color: var(--text-primary);
+  border-bottom-left-radius: var(--space-1);
+}
+
+.text {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  white-space: pre-wrap;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary);
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.actionBtn:hover {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.actionIcon {
+  font-size: var(--font-size-sm);
+}
+
+/* Timestamp */
+.timestamp {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 0 var(--space-1);
+}
+
+.timestampUser {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .content {
+    max-width: 85%;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .robotIcon {
+    width: 16px;
+    height: 16px;
+  }
+}

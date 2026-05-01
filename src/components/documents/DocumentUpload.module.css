@@ -1,0 +1,114 @@
+.wrapper {
+  margin-top: 12px;
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px 20px;
+  border: 2px dashed var(--border);
+  border-radius: 14px;
+  background: var(--surface-dark);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.dropzone:hover,
+.dropzoneActive {
+  border-color: var(--border);
+  background: var(--surface-dark);
+}
+
+.dropIcon {
+  font-size: 32px;
+  opacity: 0.6;
+}
+
+.dropText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.dropText strong {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+/* Selected file preview */
+.selectedFile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-dark);
+}
+
+.selectedIcon {
+  font-size: 20px;
+}
+
+.selectedName {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.removeBtn:hover {
+  color: #dc2626;
+}
+
+.uploadBtn {
+  margin-top: 12px;
+  padding: 10px 24px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: opacity 0.15s;
+}
+
+.uploadBtn:hover {
+  opacity: 0.85;
+}
+
+.uploadBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

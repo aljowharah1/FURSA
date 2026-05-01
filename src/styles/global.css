@@ -1,0 +1,372 @@
+@import './theme.css';
+@import './animations.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--gradient-subtle);
+  background-attachment: fixed;
+  color: var(--ink);
+  line-height: var(--line-height-normal);
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: var(--bottom-nav-height);
+}
+
+a {
+  color: var(--signal-dim);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover { color: var(--ink-dim); }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img { max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 34px; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+
+p {
+  color: var(--ink-dim);
+  line-height: var(--line-height-relaxed);
+}
+
+::selection {
+  background-color: var(--signal);
+  color: var(--signal-ink);
+}
+
+::-webkit-scrollbar { width: 0; }
+
+/* ====================================================
+   Typography utilities
+   ==================================================== */
+.t-xs {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.t-sm  { font-size: 12px; font-family: var(--font-body); }
+.t-md  { font-size: 14px; font-family: var(--font-body); }
+.t-lg  { font-size: 16px; font-family: var(--font-body); }
+.t-display      { font-family: var(--font-display); letter-spacing: -0.01em; font-weight: 600; }
+.t-serif-italic { font-family: var(--font-display); font-style: italic; font-weight: 400; }
+.t-mono         { font-family: var(--font-mono); }
+.t-caps  { text-transform: uppercase; letter-spacing: 0.14em; }
+.t-dim   { color: var(--ink-dim); }
+.t-faint { color: var(--ink-faint); }
+.t-signal { color: var(--signal-dim); }
+.t-warn   { color: var(--warn); }
+.t-ok     { color: var(--ok); }
+
+/* ====================================================
+   Buttons
+   ==================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  background: var(--bg-1);
+  color: var(--ink);
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active:not(:disabled) { transform: scale(0.97); }
+.btn.btn-primary {
+  background: var(--signal);
+  color: var(--signal-ink);
+  border-color: var(--signal);
+  font-weight: 700;
+}
+.btn.btn-primary:hover:not(:disabled) { background: var(--signal-dim); border-color: var(--signal-dim); }
+.btn.btn-ghost   { background: transparent; border-color: var(--line); }
+.btn.btn-danger  { border-color: var(--warn); color: var(--warn); background: transparent; }
+.btn.btn-sm      { padding: 6px 10px; font-size: 10px; }
+.btn.btn-block   { width: 100%; }
+.btn:disabled    { opacity: 0.4; cursor: not-allowed; }
+
+/* ====================================================
+   Badges
+   ==================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-dim);
+  font-weight: 600;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.badge-signal { color: var(--signal-dim); border-color: var(--signal-dim); background: color-mix(in srgb, var(--signal) 15%, transparent); }
+.badge-warn   { color: var(--warn);       border-color: var(--warn); }
+.badge-ok     { color: var(--ok);         border-color: var(--ok); }
+.badge-dot::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* ====================================================
+   Form fields
+   ==================================================== */
+.field {
+  display: block;
+  margin-bottom: 12px;
+}
+.field label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.field label .req { color: var(--signal); }
+.cm-input,
+.cm-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-family: var(--font-body);
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+.cm-input:focus,
+.cm-textarea:focus  { border-color: var(--signal); }
+.cm-input::placeholder { color: var(--ink-faint); }
+
+/* ====================================================
+   Cards
+   ==================================================== */
+.card {
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  border-radius: var(--r);
+}
+
+/* ====================================================
+   Toggle
+   ==================================================== */
+.toggle {
+  position: relative;
+  width: 44px; height: 26px;
+  background: var(--bg-3);
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 20px; height: 20px;
+  background: var(--ink-dim);
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+.toggle.on { background: var(--signal); border-color: var(--signal); }
+.toggle.on::after { left: 20px; background: var(--signal-ink); }
+
+/* ====================================================
+   ASCII separator
+   ==================================================== */
+.ascii-sep {
+  color: var(--ink-faint);
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  text-align: center;
+  user-select: none;
+  margin: 14px 0;
+  font-family: var(--font-body);
+}
+
+/* ====================================================
+   Key-value list
+   ==================================================== */
+.kv {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 8px 12px;
+  font-size: 12px;
+}
+.kv > dt {
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+}
+.kv > dd { margin: 0; color: var(--ink); }
+
+/* ====================================================
+   Spinner
+   ==================================================== */
+.spinner {
+  display: inline-block;
+  width: 12px; height: 12px;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ====================================================
+   Screen header (page-level)
+   ==================================================== */
+.s-header {
+  padding: 8px 20px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.s-title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  margin: 0;
+  color: var(--ink);
+}
+.s-title em { font-style: italic; font-weight: 400; color: var(--signal-dim); }
+.s-subtitle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+}
+
+/* ====================================================
+   Section title (profile-page style)
+   ==================================================== */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 8px;
+}
+.section-title-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+/* ====================================================
+   Fade/slide animations
+   ==================================================== */
+@keyframes fadeIn  { from { opacity: 0 }                              to { opacity: 1 } }
+@keyframes popIn   { from { opacity: 0; transform: translateY(8px) scale(0.98) } to { opacity: 1; transform: none } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px) }  to { opacity: 1; transform: none } }
+@keyframes slideInFromRight { from { transform: translateX(100%) } to { transform: translateX(0) } }
+.screen-enter { animation: fadeIn 0.2s ease; }
+
+/* ====================================================
+   Bottom nav tab bar (global)
+   ==================================================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-nav-height);
+  padding: 8px 6px 28px;
+  display: flex;
+  gap: 2px;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--line);
+  z-index: var(--z-bottom-nav);
+}
+
+/* ====================================================
+   Utility
+   ==================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

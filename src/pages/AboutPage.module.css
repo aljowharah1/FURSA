@@ -1,0 +1,259 @@
+.page {
+  padding: 0 0 40px;
+  text-align: left;
+}
+
+.backBtn {
+  display: inline-block;
+  margin: 16px 20px 0;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-dim);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 28px 20px 20px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.logoMark {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--signal);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-2);
+  margin: 0 auto 12px;
+  position: relative;
+}
+
+.logoTriangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 13px solid var(--signal);
+}
+
+.appName {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.tagline {
+  font-size: 13px;
+  color: var(--ink-dim);
+  font-family: var(--font-body);
+  margin-bottom: 6px;
+}
+
+.courseInfo {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-family: var(--font-body);
+}
+
+/* ── Section labels ── */
+.sectionTitle {
+  padding: 16px 20px 8px;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+/* ── Team ── */
+.teamGrid {
+  padding: 0 20px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.teamCard {
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  border-radius: 8px;
+  padding: 14px 12px;
+}
+
+.memberAvatar {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--signal);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--signal);
+  background: var(--bg-2);
+  margin-bottom: 8px;
+}
+
+.memberName {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.memberId {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.memberRole {
+  font-size: 10px;
+  color: var(--ink-dim);
+  font-family: var(--font-body);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.memberEmail {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--signal-dim);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+/* ── Stack ── */
+.stackRow {
+  padding: 0 20px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stackBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--signal-dim);
+  border: 1px solid var(--signal-dim);
+  background: color-mix(in srgb, var(--signal) 10%, transparent);
+}
+
+/* ── Features ── */
+.featureList {
+  padding: 0 20px 12px;
+  display: grid;
+  gap: 2px;
+}
+
+.featureItem {
+  display: flex;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: var(--font-body);
+  color: var(--ink-dim);
+  align-items: flex-start;
+}
+
+.featureBullet {
+  color: var(--signal);
+  flex-shrink: 0;
+  font-size: 11px;
+  margin-top: 1px;
+}
+
+/* ── Contact ── */
+.contactBlock {
+  padding: 0 20px 12px;
+  display: grid;
+  gap: 4px;
+}
+
+.contactRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  border-radius: 6px;
+}
+
+.contactKey {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.contactVal {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a.contactVal { color: var(--signal-dim); }
+
+/* ── Footer ── */
+.footer {
+  padding: 20px 20px 0;
+  border-top: 1px solid var(--line);
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 11px;
+  color: var(--ink-dim);
+  font-family: var(--font-body);
+  margin-bottom: 4px;
+}
+
+.footerVersion {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-family: var(--font-body);
+}
