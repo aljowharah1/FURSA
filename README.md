@@ -1,4 +1,5 @@
-# FURSA -  *F*inding *U*nique *R*oles through *S*mart *A*I
+# FURSA 
+**F**inding **U**nique **R**oles through **S**mart **A**I
 
 > **Team Info**
 > | Name | Student ID |
