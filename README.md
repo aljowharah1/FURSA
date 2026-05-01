@@ -3,7 +3,7 @@
 > **Team Info**
 > | Name | Student ID |
 > |------|------------|
-> | Aljowharah Abdulrahman Aljubair | 222410187 |
+> | Aljowharah Aljubair | 222410187 |
 > | Sarah Qahwaji | 222410358 |
 
 CareerMate is a React-based web application designed to help university students discover, track, and manage their co-op and internship applications. Built as a group project for **-** at **Prince Sultan University** (Spring 2026).
@@ -12,10 +12,10 @@ CareerMate is a React-based web application designed to help university students
 
 The application satisfies the following requirements:
 
-- **React Project**: Built with React 19, TypeScript, and Vite.
-- **Navigation Menu**: A bottom navigation bar and header allow users to navigate between all features (Discover, Track, AI Chat, Profile, About).
-- **Data Management**: Users can add, remove, update, and display job applications, documents, skills, and profile information through the Track and Profile pages.
-- **About Page**: Accessible via the navigation menu, presenting team members with names and student IDs.
+- **one**: blabla.
+- **two**: blabla.
+- **three**:blabla.
+- **idk**: blabla.
 
 ## Features
 
@@ -27,8 +27,7 @@ The application satisfies the following requirements:
 - Interview preparation tips
 - Application analytics and insights
 - Profile management with skills tracking
-- Dark mode support
-- Fully responsive mobile-first design
+
 
 ## Tech Stack
 
@@ -37,15 +36,14 @@ The application satisfies the following requirements:
 - Vite
 - React Spring (animations)
 - CSS Modules
-- LocalStorage (data persistence)
+- LocalStorage (data persistence)?
 
 ## Team Members
 
 | Name                             | Student ID |
 |----------------------------------|------------|
-| Aljowharah Abdulrahman Aljubair  | 222410187  |
-| Reem Saad Aljuhani               | 221410309  |
-
+| Aljowharah Aljubair              | 222410187  |
+| Sarah Qahwaji                    | 222410358  |
 ## Getting Started
 
 ### Prerequisites
