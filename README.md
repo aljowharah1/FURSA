@@ -4,7 +4,7 @@
 > | Name | Student ID |
 > |------|------------|
 > | Aljowharah Abdulrahman Aljubair | 222410187 |
-> | Reem Saad Aljuhani | 221410309 |
+> | Sarah Qahwaji | 222410358 |
 
 CareerMate is a React-based web application designed to help university students discover, track, and manage their co-op and internship applications. Built as a group project for **SE411 - Software Engineering** at **Prince Sultan University** (Spring 2026).
 
