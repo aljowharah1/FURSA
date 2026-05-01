@@ -1,4 +1,4 @@
-# CareerMate - AI-Powered Co-op Manager
+# FURSA -  *F*inding *U*nique *R*oles through *S*mart *A*I
 
 > **Team Info**
 > | Name | Student ID |
