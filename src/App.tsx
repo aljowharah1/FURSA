@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import { UserProvider } from './context/UserContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { AgentProvider } from './context/AgentContext';
+import { useAgentSystem } from './context/AgentContext';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import BottomNav from './components/layout/BottomNav';
@@ -15,14 +17,44 @@ import AboutPage from './pages/AboutPage';
 import ApplicationDetailPage from './pages/ApplicationDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Toast from './components/common/Toast';
+import { CVUpload } from './components/CVUpload';
+
+// Inner component — has access to AgentContext
+function AppShell({ onLogout }: { onLogout: () => void }) {
+  const { agentState } = useAgentSystem();
+
+  // Show CV upload screen until agents are done
+  if (!agentState.isReady) {
+    return <CVUpload />;
+  }
+
+  // Agents done — show the full app
+  return (
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<DiscoverPage />} />
+          <Route path="/track" element={<TrackPage />} />
+          <Route path="/profile" element={<ProfilePage onLogout={onLogout} />} />
+          <Route path="/ai-chat" element={<AIChatPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/application/:id" element={<ApplicationDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
+      <Footer />
+      <BottomNav />
+      <Toast />
+    </div>
+  );
+}
 
 function App() {
-  // Auth state: check if a JWT token exists in localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return localStorage.getItem('cm_authenticated') === 'true' && !!localStorage.getItem('cm_token');
   });
 
-  // Re-check auth on storage changes (e.g., token cleared by API client on 401)
   useEffect(() => {
     const handleStorage = () => {
       const hasToken = !!localStorage.getItem('cm_token');
@@ -57,23 +89,9 @@ function App() {
     <ThemeProvider>
       <UserProvider>
         <AppProvider>
-          <div className="app">
-            <Header />
-            <main className="main-content">
-              <Routes>
-                <Route path="/" element={<DiscoverPage />} />
-                <Route path="/track" element={<TrackPage />} />
-                <Route path="/profile" element={<ProfilePage onLogout={handleLogout} />} />
-                <Route path="/ai-chat" element={<AIChatPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/application/:id" element={<ApplicationDetailPage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </main>
-            <Footer />
-            <BottomNav />
-            <Toast />
-          </div>
+          <AgentProvider>
+            <AppShell onLogout={handleLogout} />
+          </AgentProvider>
         </AppProvider>
       </UserProvider>
     </ThemeProvider>
